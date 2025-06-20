@@ -37,7 +37,16 @@ class Result:
 # Define the main typing test class
 class TypingTest:
 # Build the GUI interface (labels, entry box, buttons)
+     def __init__(self, master, duration=60):
+        self.master = master
+        self.master.title("Typing Speed Test - Timed Mode")
 # Initialize counters and timer
+        self.duration = duration
+        self.remaining_time = duration
+        self.correct = 0
+        self.total = 0
+        self.test_running = False
+        self.start_time = None
 # Start the typing test when user clicks Start
 # Display words and handles typing logic
 # Check typed words for correctness
