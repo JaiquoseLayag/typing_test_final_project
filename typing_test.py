@@ -30,6 +30,8 @@ class Result:
     def words_per_minute(self):
         return round((self.correct / self.time_elapsed) * 60, 2) if self.time_elapsed > 0 else 0
 # Calculate typing accuracy
+     def accuracy(self):
+        return round((self.correct / self.total) * 100, 2) if self.total > 0 else 0
 
 # Define the main typing test class
 # Build the GUI interface (labels, entry box, buttons)
