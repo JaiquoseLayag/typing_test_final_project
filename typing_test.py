@@ -72,6 +72,10 @@ class TypingTest:
         self.test_running = True
         self.start_time = time.time()
 # Display words and handles typing logic
+        self.word_label.config(text=self.generator.get_word())
+        self.feedback.config(text="")
+        self.stats.config(text="")
+        self.timer_label.config(text=f"Time left: {self.remaining_time}s")
 # Check typed words for correctness
 # Update feedback and stats
 # Count down the time using after()
