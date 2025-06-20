@@ -47,6 +47,23 @@ class TypingTest:
         self.total = 0
         self.test_running = False
         self.start_time = None
+        self.generator = WordGenerator()
+        self.label = tk.Label(master, text="Type the word below before time runs out:", font=('Arial', 14))
+        self.label.pack(pady=10)
+        self.word_label = tk.Label(master, text="", font=('Arial', 18, 'bold'))
+        self.word_label.pack(pady=5)
+        self.entry = tk.Entry(master, font=('Arial', 14))
+        self.entry.pack(pady=10)
+        self.entry.bind("<Return>", self.check_word)
+        self.timer_label = tk.Label(master, text=f"Time left: {self.remaining_time}s", font=('Arial', 12))
+        self.timer_label.pack()
+        self.feedback = tk.Label(master, text="", font=('Arial', 12))
+        self.feedback.pack()
+        self.stats = tk.Label(master, text="", font=('Arial', 12))
+        self.stats.pack(pady=10)
+        self.restart_btn = tk.Button(master, text="Start Test", command=self.start_test)
+        self.restart_btn.pack(pady=5)
+        self.entry.config(state='disabled')
 # Start the typing test when user clicks Start
 # Display words and handles typing logic
 # Check typed words for correctness
