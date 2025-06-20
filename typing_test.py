@@ -1,6 +1,6 @@
 # Import necessary built-in modules
 import random
-
+import time 
 
 # Define a class to manage and return random words
 class WordGenerator:
