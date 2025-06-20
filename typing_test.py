@@ -107,7 +107,14 @@ class TypingTest:
         else:
             self.end_test()
 # End the test and show final results
-
+    def end_test(self):
+        self.test_running = False
+        self.entry.config(state='disabled')
+        elapsed_time = time.time() - self.start_time
+        result = Result(self.correct, self.total, elapsed_time)
+        self.feedback.config(text="Time's up!", fg='blue')
+        self.stats.config(text=f"WPM: {result.words_per_minute()} | Accuracy: {result.accuracy()}%")
+        self.restart_btn.config(text="Restart Test")
 # Define the app launcher class
 # Initialize and run the tkinter main loop
 
