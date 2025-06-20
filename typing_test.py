@@ -1,6 +1,7 @@
 # Import necessary built-in modules
 import random
 import time 
+import tkinter
 
 # Define a class to manage and return random words
 class WordGenerator:
@@ -34,6 +35,7 @@ class Result:
         return round((self.correct / self.total) * 100, 2) if self.total > 0 else 0
 
 # Define the main typing test class
+class TypingTest:
 # Build the GUI interface (labels, entry box, buttons)
 # Initialize counters and timer
 # Start the typing test when user clicks Start
