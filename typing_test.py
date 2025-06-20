@@ -1,5 +1,8 @@
 # Import necessary built-in modules
+import random
 
+class WordGenerator:
+    def __init__(self):
 # Define a class to manage and return random words
 # Store word list
 # Return one random word each time
