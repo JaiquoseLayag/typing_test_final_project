@@ -20,7 +20,12 @@ class WordGenerator:
         return random.choice(self.words)
 
 # Define a class to handle result calculation
+class Result:
 # Store correct answers, total attempts, and time elapsed
+     def __init__(self, correct, total, time_elapsed):
+        self.correct = correct
+        self.total = total
+        self.time_elapsed = time_elapsed
 # Calculate WPM (words per minute)
 # Calculate typing accuracy
 
