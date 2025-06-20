@@ -98,8 +98,14 @@ class TypingTest:
             
         self.entry.delete(0, tk.END)
         self.word_label.config(text=self.generator.get_word())
-
 # Count down the time using after()
+    def update_timer(self):
+        if self.remaining_time > 0 and self.test_running:
+            self.remaining_time -= 1
+            self.timer_label.config(text=f"Time left: {self.remaining_time}s")
+            self.master.after(1000, self.update_timer)
+        else:
+            self.end_test()
 # End the test and show final results
 
 # Define the app launcher class
