@@ -23,21 +23,21 @@ class WordGenerator:
 # Define a class to handle result calculation
 class Result:
 # Store correct answers, total attempts, and time elapsed
-     def __init__(self, correct, total, time_elapsed):
+    def __init__(self, correct, total, time_elapsed):
         self.correct = correct
         self.total = total
         self.time_elapsed = time_elapsed
 # Calculate WPM (words per minute)
-     def words_per_minute(self):
+    def words_per_minute(self):
         return round((self.correct / self.time_elapsed) * 60, 2) if self.time_elapsed > 0 else 0
 # Calculate typing accuracy
-     def accuracy(self):
+    def accuracy(self):
         return round((self.correct / self.total) * 100, 2) if self.total > 0 else 0
 
 # Define the main typing test class
 class TypingTest:
 # Build the GUI interface (labels, entry box, buttons)
-     def __init__(self, master, duration=60):
+    def __init__(self, master, duration=60):
         self.master = master
         self.master.title("Typing Speed Test - Timed Mode")
 # Initialize counters and timer
@@ -65,6 +65,12 @@ class TypingTest:
         self.restart_btn.pack(pady=5)
         self.entry.config(state='disabled')
 # Start the typing test when user clicks Start
+    def start_test(self):
+        self.correct = 0
+        self.total = 0
+        self.remaining_time = self.duration
+        self.test_running = True
+        self.start_time = time.time()
 # Display words and handles typing logic
 # Check typed words for correctness
 # Update feedback and stats
