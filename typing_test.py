@@ -27,6 +27,8 @@ class Result:
         self.total = total
         self.time_elapsed = time_elapsed
 # Calculate WPM (words per minute)
+    def words_per_minute(self):
+        return round((self.correct / self.time_elapsed) * 60, 2) if self.time_elapsed > 0 else 0
 # Calculate typing accuracy
 
 # Define the main typing test class
