@@ -126,3 +126,6 @@ class TypingTestApp:
     def run(self):
         self.root.mainloop()
 # Entry point: run the app only if this file is executed directly
+if __name__ == "__main__":
+    app = TypingTestApp()
+    app.run()
