@@ -115,7 +115,9 @@ class TypingTest:
         self.feedback.config(text="Time's up!", fg='blue')
         self.stats.config(text=f"WPM: {result.words_per_minute()} | Accuracy: {result.accuracy()}%")
         self.restart_btn.config(text="Restart Test")
+        
 # Define the app launcher class
+class TypingTestApp:
 # Initialize and run the tkinter main loop
 
 # Entry point: run the app only if this file is executed directly
