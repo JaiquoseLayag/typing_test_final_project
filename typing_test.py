@@ -1,7 +1,7 @@
 # Import necessary built-in modules
 import random
 import time 
-import tkinter
+import tkinter as tk
 
 # Define a class to manage and return random words
 class WordGenerator:
@@ -28,7 +28,7 @@ class Result:
         self.total = total
         self.time_elapsed = time_elapsed
 # Calculate WPM (words per minute)
-    def words_per_minute(self):
+     def words_per_minute(self):
         return round((self.correct / self.time_elapsed) * 60, 2) if self.time_elapsed > 0 else 0
 # Calculate typing accuracy
      def accuracy(self):
