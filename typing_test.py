@@ -76,8 +76,29 @@ class TypingTest:
         self.feedback.config(text="")
         self.stats.config(text="")
         self.timer_label.config(text=f"Time left: {self.remaining_time}s")
+        
+        self.entry.config(state='normal')
+        self.entry.delete(0, tk.END)
+        self.entry.focus()
+        self.update_timer()
 # Check typed words for correctness
-# Update feedback and stats
+    def check_word(self, event=None):
+        if not self.test_running:
+            return
+
+        typed_word = self.entry.get().strip()
+        displayed_word = self.word_label.cget("text")
+        self.total += 1
+
+        if typed_word == displayed_word:
+            self.correct += 1
+            self.feedback.config(text="Correct!", fg='green')
+        else:
+            self.feedback.config(text=f"Wrong! ({displayed_word})", fg='red')
+            
+        self.entry.delete(0, tk.END)
+        self.word_label.config(text=self.generator.get_word())
+
 # Count down the time using after()
 # End the test and show final results
 
