@@ -2,6 +2,10 @@
 import time 
 import tkinter as tk
 
+from word_generator import WordGenerator
+from result_class import Result
+
+
 # Define the main typing test class
 class TypingTest:
 # Build the GUI interface (labels, entry box, buttons)
