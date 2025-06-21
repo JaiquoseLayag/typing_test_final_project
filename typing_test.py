@@ -25,7 +25,8 @@ class TypingTest:
         self.difficulty_label.pack()
         self.difficulty_dropdown = tk.OptionMenu(master, self.difficulty_var, "easy", "medium", "hard")
         self.difficulty_dropdown.pack(pady=5)
-        self.generator = WordGenerator()
+        difficulty = self.difficulty_var.get()
+        self.generator = WordGenerator(difficulty)
         self.label = tk.Label(master, text="Type the word below before time runs out:", font=('Arial', 14))
         self.label.pack(pady=10)
 # Display current word to type
