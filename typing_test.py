@@ -25,8 +25,6 @@ class TypingTest:
         self.difficulty_label.pack()
         self.difficulty_dropdown = tk.OptionMenu(master, self.difficulty_var, "easy", "medium", "hard")
         self.difficulty_dropdown.pack(pady=5)
-        difficulty = self.difficulty_var.get()
-        self.generator = WordGenerator(difficulty)
         self.label = tk.Label(master, text="Type the word below before time runs out:", font=('Arial', 14))
         self.label.pack(pady=10)
 # Display current word to type
@@ -48,6 +46,10 @@ class TypingTest:
         self.entry.config(state='disabled')
 # Start the typing test when user clicks Start
     def start_test(self):
+# Get difficulty from dropdown and create new generator
+        difficulty = self.difficulty_var.get()
+        self.generator = WordGenerator(difficulty)
+
         self.correct = 0
         self.total = 0
         self.remaining_time = self.duration
@@ -64,27 +66,27 @@ class TypingTest:
         self.entry.focus()
         self.update_timer()
 # Check typed words for correctness
-def check_word(self, event=None):
-    if not self.test_running:
-        return
+    def check_word(self, event=None):
+        if not self.test_running:
+            return
 
-    typed_word = self.entry.get().strip()
-    displayed_word = self.word_label.cget("text")
+        typed_word = self.entry.get().strip()
+        displayed_word = self.word_label.cget("text")
 
-    if typed_word == displayed_word:
-        self.correct += 1
-        self.total += 1
-        self.feedback.config(text="Correct!", fg='green')
+        if typed_word == displayed_word:
+            self.correct += 1
+            self.total += 1
+            self.feedback.config(text="Correct!", fg='green')
 
         # Move to the next word
-        self.entry.delete(0, tk.END)
-        self.word_label.config(text=self.generator.get_word())
-    else:
-        self.total += 1
-        self.feedback.config(text=f"Wrong! Try again.", fg='red')
+            self.entry.delete(0, tk.END)
+            self.word_label.config(text=self.generator.get_word())
+        else:
+            self.total += 1
+            self.feedback.config(text=f"Wrong! Try again.", fg='red')
 
 # Keep the same word; let user retype
-        self.entry.delete(0, tk.END)
+            self.entry.delete(0, tk.END)
 # Count down the time using after()
     def update_timer(self):
         if self.remaining_time > 0 and self.test_running:
