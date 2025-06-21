@@ -15,3 +15,12 @@ class DifficultyManager:
                 "debug", "output", "input", "print", "library", "package", "function", "program",
                 "script", "compile", "execute", "iterate", "console"
             ],
+            "hard": [
+                "decorator", "generator", "comprehension", "encapsulation", "inheritance",
+                "polymorphism", "abstraction", "classmethod", "staticmethod", "metaclass",
+                "descriptor", "contextmanager", "coroutine", "asynchronous", "multithreading",
+                "multiprocessing", "serialization", "deserialization", "introspection",
+                "reflection", "recursion", "algorithm", "structure", "bytecode", "interpreter",
+                "framework", "dependency", "virtual", "environment", "paradigm"
+            ]
+        }
