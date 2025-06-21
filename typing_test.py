@@ -19,6 +19,12 @@ class TypingTest:
         self.total = 0
         self.test_running = False
         self.start_time = None
+# Add dropdown for difficulty selection
+        self.difficulty_var = tk.StringVar(value="medium")
+        self.difficulty_label = tk.Label(master, text="Select Difficulty:", font=('Arial', 12))
+        self.difficulty_label.pack()
+        self.difficulty_dropdown = tk.OptionMenu(master, self.difficulty_var, "easy", "medium", "hard")
+        self.difficulty_dropdown.pack(pady=5)
         self.generator = WordGenerator()
         self.label = tk.Label(master, text="Type the word below before time runs out:", font=('Arial', 14))
         self.label.pack(pady=10)
@@ -76,7 +82,7 @@ def check_word(self, event=None):
         self.total += 1
         self.feedback.config(text=f"Wrong! Try again.", fg='red')
 
-        # Keep the same word; let user retype
+# Keep the same word; let user retype
         self.entry.delete(0, tk.END)
 # Count down the time using after()
     def update_timer(self):
