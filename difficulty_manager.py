@@ -24,3 +24,6 @@ class DifficultyManager:
                 "framework", "dependency", "virtual", "environment", "paradigm"
             ]
         }
+ # Return a word list based on selected difficulty
+    def get_words(self, level):
+        return self.word_levels.get(level, self.word_levels["medium"])
