@@ -50,15 +50,18 @@ class TypingTest:
         self.generator = WordGenerator()
         self.label = tk.Label(master, text="Type the word below before time runs out:", font=('Arial', 14))
         self.label.pack(pady=10)
+# Display current word to type
         self.word_label = tk.Label(master, text="", font=('Arial', 18, 'bold'))
         self.word_label.pack(pady=5)
         self.entry = tk.Entry(master, font=('Arial', 14))
         self.entry.pack(pady=10)
         self.entry.bind("<Return>", self.check_word)
+# Label to show remaining time
         self.timer_label = tk.Label(master, text=f"Time left: {self.remaining_time}s", font=('Arial', 12))
         self.timer_label.pack()
         self.feedback = tk.Label(master, text="", font=('Arial', 12))
         self.feedback.pack()
+ # Label to show final result
         self.stats = tk.Label(master, text="", font=('Arial', 12))
         self.stats.pack(pady=10)
         self.restart_btn = tk.Button(master, text="Start Test", command=self.start_test)
