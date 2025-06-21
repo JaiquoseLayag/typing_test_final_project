@@ -1,5 +1,6 @@
 # Import random for random word selection
 import random
+from difficulty_manager import DifficultyManager
 
 # Define a class to manage and return random words
 class WordGenerator:
