@@ -3,8 +3,8 @@ This project is inspired by a procedural implementation from **[PythonGeeks.org]
 
 # Features
 
-Choose difficulty level: **Easy**, **Medium**, or **Hard**
-Calculates **Words Per Minute (WPM)** and **Accuracy**
-Allows retyping incorrect words until correct
-Timer-based (default: 60 seconds)
-Built using **Tkinter** and written in **Object-Oriented Python**
+- Choose difficulty level: **Easy**, **Medium**, or **Hard**
+- Calculates **Words Per Minute (WPM)** and **Accuracy**
+- Allows retyping incorrect words until correct
+- Timer-based (default: 60 seconds)
+- Built using **Tkinter** and written in **Object-Oriented Python**
