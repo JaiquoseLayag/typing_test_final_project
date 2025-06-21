@@ -9,3 +9,9 @@ class DifficultyManager:
                 "init", "main", "path", "file", "read", "write", "open", "close", "sort", "map",
                 "filt", "iter", "next", "call", "obj", "type", "cast", "comp", "pip", "env"
             ],
+            "medium": [
+                "module", "import", "return", "lambda", "method", "object", "string", "number",
+                "float", "integer", "boolean", "global", "local", "scope", "syntax", "error",
+                "debug", "output", "input", "print", "library", "package", "function", "program",
+                "script", "compile", "execute", "iterate", "console"
+            ],
