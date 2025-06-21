@@ -2,7 +2,6 @@
 import time 
 import tkinter as tk
 
-
 # Define the main typing test class
 class TypingTest:
 # Build the GUI interface (labels, entry box, buttons)
@@ -87,17 +86,3 @@ class TypingTest:
         self.feedback.config(text="Time's up!", fg='blue')
         self.stats.config(text=f"WPM: {result.words_per_minute()} | Accuracy: {result.accuracy()}%")
         self.restart_btn.config(text="Restart Test")
-        
-# Define the app launcher class
-class TypingTestApp:
-# Initialize and run the tkinter main loop
-    def __init__(self):
-        self.root = tk.Tk()
-        self.test = TypingTest(self.root, duration=60)
-
-    def run(self):
-        self.root.mainloop()
-# Entry point: run the app only if this file is executed directly
-if __name__ == "__main__":
-    app = TypingTestApp()
-    app.run()
