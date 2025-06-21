@@ -57,22 +57,27 @@ class TypingTest:
         self.entry.focus()
         self.update_timer()
 # Check typed words for correctness
-    def check_word(self, event=None):
-        if not self.test_running:
-            return
+def check_word(self, event=None):
+    if not self.test_running:
+        return
 
-        typed_word = self.entry.get().strip()
-        displayed_word = self.word_label.cget("text")
+    typed_word = self.entry.get().strip()
+    displayed_word = self.word_label.cget("text")
+
+    if typed_word == displayed_word:
+        self.correct += 1
         self.total += 1
+        self.feedback.config(text="Correct!", fg='green')
 
-        if typed_word == displayed_word:
-            self.correct += 1
-            self.feedback.config(text="Correct!", fg='green')
-        else:
-            self.feedback.config(text=f"Wrong! ({displayed_word})", fg='red')
-            
+        # Move to the next word
         self.entry.delete(0, tk.END)
         self.word_label.config(text=self.generator.get_word())
+    else:
+        self.total += 1
+        self.feedback.config(text=f"Wrong! Try again.", fg='red')
+
+        # Keep the same word; let user retype
+        self.entry.delete(0, tk.END)
 # Count down the time using after()
     def update_timer(self):
         if self.remaining_time > 0 and self.test_running:
